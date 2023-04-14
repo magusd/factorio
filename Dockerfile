@@ -10,12 +10,7 @@ COPY factorio.tar.xz /tmp/factorio.tar.xz
 
 RUN cd /opt/ && \
     tar -xvf /tmp/factorio.tar.xz && \
-    rm /tmp/factorio.tar.xz && \
-    mkdir factorio/saves && \
-    useradd factorio && \
-    chown -R factorio:factorio /opt/factorio
-
-USER factorio
+    rm /tmp/factorio.tar.xz
 
 WORKDIR /opt/factorio
 
