@@ -19,6 +19,6 @@ USER factorio
 
 WORKDIR /opt/factorio
 
-RUN /opt/factorio/bin/x64/factorio --create /opt/factorio/saves/magusd.zip
+COPY entrypoint.sh /entrypoint.sh
 
-CMD /opt/factorio/bin/x64/factorio --start-server /opt/factorio/saves/magusd.zip
+CMD /entrypoint.sh
