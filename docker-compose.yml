@@ -1,10 +1,15 @@
 version: '3'
 services:
   factorio:
+    restart: always
     build: .
     ports:
       - "34197:34197/udp"
       - "27015:27015/udp"
     # command: "/opt/factorio/bin/x64/factorio --start-server /opt/factorio/saves/_autosave2.zip"
     volumes:
+      - ./entrypoint.sh:/entrypoint.sh
       - ./saves:/opt/factorio/saves
+      # - ./mods:/opt/factorio/mods
+      - ./config:/opt/factorio/config
+      - ./server-adminlist.json:/opt/factorio/server-adminlist.json
